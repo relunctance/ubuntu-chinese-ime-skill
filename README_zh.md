@@ -1,40 +1,21 @@
----
-name: ubuntu-chinese-ime
-description: Ubuntu/WSL 安装 fcitx5 中文输入法，解决中文输入问题
-description_en: Install fcitx5 Chinese IME on Ubuntu/WSL to enable Chinese input
-triggers:
-  - ubuntu 中文输入法
-  - ubuntu 安装 fcitx5
-  - ubuntu 安装 中文输入
-  - wsl 中文输入
-  - linux 输入法
-  - fcitx5 安装
-  - ubuntu chinese input method
-  - install fcitx5
-category: devops
-author: relunctance
-created: 2026-05-08
-updated: 2026-05-08
-tags:
-  - ubuntu
-  - wsl
-  - fcitx5
-  - 中文输入
-  - fcitx5-pinyin
-  - fcitx5-chinese-addons
-platforms:
-  openclaw: true
-  claude_code: true
-  hermes: true
----
-
 # ubuntu-chinese-ime
+
+> Ubuntu / WSL Ubuntu 桌面版安装 fcitx5 中文输入法
 
 ## 概述
 
 Ubuntu / WSL Ubuntu 桌面版安装配置 fcitx5 中文输入法。
 
-推荐组合：`fcitx5 + fcitx5-pinyin + fcitx5-chinese-addons`（云拼音、联想、纠错功能齐全，体验接近搜狗/百度）
+推荐组合：`fcitx5 + fcitx5-pinyin + fcitx5-chinese-addons`（云拼音、联想、纠错功能齐全，体验接近搜狗/百度输入法）
+
+## 触发条件
+
+- ubuntu 中文输入法
+- ubuntu 安装 fcitx5
+- ubuntu 安装 中文输入
+- wsl 中文输入
+- linux 输入法
+- fcitx5 安装
 
 ## 快速安装
 
@@ -89,21 +70,6 @@ fcitx5 &
 | `Shift` | 中英文切换 |
 | `Ctrl + Shift` | 切换不同输入法 |
 
-## 安装
-
-```bash
-# OpenClaw
-clawhub install ubuntu-chinese-ime
-
-# Claude Code
-mkdir -p ~/claude/skills/ubuntu-chinese-ime
-cp SKILL.md ~/claude/skills/ubuntu-chinese-ime/
-
-# Hermes
-mkdir -p ~/.hermes/skills/ubuntu-chinese-ime
-cp SKILL.md ~/.hermes/skills/ubuntu-chinese-ime/
-```
-
 ## 踩坑记录
 
 | 坑 | 解决方案 |
@@ -113,3 +79,34 @@ cp SKILL.md ~/.hermes/skills/ubuntu-chinese-ime/
 | fcitx5 没启动 | `fcitx5 &` 或设置自动启动 |
 | 搜狗输入法装不上 | Ubuntu 24.04 无 fcitx4 官方支持，用 fcitx5-pinyin 替代 |
 | 百度输入法无 Linux 版 | 用 fcitx5-chinese-addons 云拼音替代 |
+
+## 安装
+
+### OpenClaw
+```bash
+clawhub install ubuntu-chinese-ime
+```
+
+### Claude Code
+```bash
+mkdir -p ~/claude/skills/ubuntu-chinese-ime
+cp SKILL.md ~/claude/skills/ubuntu-chinese-ime/
+```
+
+### Hermes
+```bash
+mkdir -p ~/.hermes/skills/ubuntu-chinese-ime
+cp SKILL.md ~/.hermes/skills/ubuntu-chinese-ime/
+```
+
+## 平台支持
+
+| 平台 | 状态 |
+|------|------|
+| OpenClaw | ✅ 支持 |
+| Claude Code | ✅ 支持 |
+| Hermes | ✅ 支持 |
+
+## 相关文档
+
+- [English README](README.md)
