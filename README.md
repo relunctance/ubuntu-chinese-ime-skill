@@ -1,119 +1,101 @@
 # ubuntu-chinese-ime
 
-> Install fcitx5 Chinese IME on Ubuntu / WSL Ubuntu Desktop
+<div align="center">
 
-## Overview
+![ubuntu-chinese-ime](assets/banner.svg)
 
-Install and configure fcitx5 Chinese input method on Ubuntu / WSL Ubuntu Desktop.
+</div>
 
-Recommended package: `fcitx5 + fcitx5-pinyin + fcitx5-chinese-addons` — includes cloud pinyin, autocomplete, and error correction, comparable to Sogou/Baidu IME experience.
+<p align="center">
 
-## Triggers
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-Supported-blueviolet)](https://github.com/openclaw)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-green)](https://claude.ai)
+[![Codex](https://img.shields.io/badge/Codex-Compatible-orange)](https://github.com)
+[![Hermes](https://img.shields.io/badge/Hermes-Agent-blue)](https://github.com)
 
-- ubuntu chinese input method
-- install fcitx5
-- ubuntu 中文输入法
-- ubuntu 安装 fcitx5
-- wsl 中文输入
-- linux input method
+</p>
 
-## Quick Setup
+<div align="center">
 
-### Install
+# ubuntu-chinese-ime
+
+Ubuntu / WSL fcitx5 中文输入法安装配置指南
+
+</div>
+
+---
+
+## 核心特性
+
+| 特性 | 说明 |
+|------|------|
+| 🌙 **fcitx5** | 现代化中文输入法框架，体验接近搜狗/百度 |
+| ☁️ **云拼音** | 联想、纠错、云端词库功能齐全 |
+| 🔧 **开箱即用** | 一键安装，配置简单 |
+
+---
+
+## 快速开始
 
 ```bash
+# 安装
 sudo apt update
 sudo apt install fcitx5 fcitx5-pinyin fcitx5-chinese-addons
-```
 
-### Configure Environment Variables
-
-```bash
+# 配置环境变量
 cat >> ~/.bashrc << 'EOF'
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 EOF
-
 source ~/.bashrc
-```
 
-### Configure Input Method
-
-```bash
+# 配置输入法
 im-config -n fcitx5
 fcitx5-configtool
 ```
 
-In the config UI:
-1. Ensure `Keyboard - English` is at the top (default English input)
-2. Add `Pinyin` or `Chinese - Pinyin (fcitx5-chinese-addons)`
+---
 
-### Verify
+## 触发条件
 
-```bash
-# Check fcitx5 installed
-which fcitx5 && fcitx5 --version
+- ubuntu 中文输入法
+- ubuntu 安装 fcitx5
+- wsl 中文输入
+- fcitx5 安装
 
-# Check env vars
-echo $GTK_IM_MODULE   # should output: fcitx
+---
 
-# Start manually if not auto-started
-fcitx5 &
+## 快捷键
 
-# Test: open browser, switch to Chinese IME, type pinyin
-```
+| 快捷键 | 功能 |
+|--------|------|
+| `Ctrl + Space` | 激活/关闭输入法 |
+| `Shift` | 中英文切换 |
+| `Ctrl + Shift` | 切换不同输入法 |
 
-## Input Method Shortcuts
+---
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl + Space` | Toggle IME on/off |
-| `Shift` | Switch Chinese/English |
-| `Ctrl + Shift` | Switch between input methods |
+## 平台支持
 
-## Pitfalls
+| 平台 | 状态 | 安装方式 |
+|------|------|---------|
+| OpenClaw | ✅ 支持 | `clawhub install ubuntu-chinese-ime` |
+| Claude Code | ✅ 支持 | 复制 SKILL.md 到 `~/claude/skills/ubuntu-chinese-ime/` |
+| Codex | ✅ 支持 | 复制 SKILL.md 到 `~/.codex/skills/ubuntu-chinese-ime/` |
+| Hermes | ✅ 支持 | 复制 SKILL.md 到 `~/.hermes/skills/ubuntu-chinese-ime/` |
 
-| Issue | Solution |
-|-------|----------|
-| IME not working after reboot | Add env vars to `~/.bashrc`, logout and login again |
-| im-config ineffective (WSLg) | Manually export the 3 env vars |
-| fcitx5 not started | `fcitx5 &` or set to auto-start |
-| Sogou IME won't install | Ubuntu 24.04 removed fcitx4, use fcitx5-pinyin instead |
-| Baidu IME unavailable on Linux | Use fcitx5-chinese-addons cloud pinyin |
+---
 
-## Installation
+## 详见
 
-### OpenClaw
-```bash
-clawhub install ubuntu-chinese-ime
-```
+完整的 SKILL.md 定义和踩坑记录请查阅 [SKILL.md](SKILL.md)。
 
-### Claude Code
-```bash
-mkdir -p ~/claude/skills/ubuntu-chinese-ime
-cp SKILL.md ~/claude/skills/ubuntu-chinese-ime/
-```
+---
 
-### Hermes
-```bash
-mkdir -p ~/.hermes/skills/ubuntu-chinese-ime
-cp SKILL.md ~/.hermes/skills/ubuntu-chinese-ime/
-```
+<div align="center">
 
-### Manual (GitHub)
-```bash
-git clone https://github.com/relunctance/ubuntu-chinese-ime.git
-```
+MIT License © [relunctance](https://github.com/relunctance)
 
-## Platforms
-
-| Platform | Status |
-|----------|--------|
-| OpenClaw | ✅ Supported |
-| Claude Code | ✅ Supported |
-| Hermes | ✅ Supported |
-
-## See Also
-
-- [中文文档 (Chinese README)](README_zh.md)
+</div>
